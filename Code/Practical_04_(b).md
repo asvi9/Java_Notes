@@ -13,7 +13,7 @@ public class PrimeNumber {
         if (num <= 1) {
             isPrime = false;
         } else if (num == 2) {
-            isPrime = true; // 2 is prime
+            isPrime = true; 
         } else {
             do {
                 if (num % i == 0) {
