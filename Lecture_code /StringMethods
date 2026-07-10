@@ -1,0 +1,37 @@
+method                                    Description                                                                     Example
+append()                                  Appends the specified string to the end of another string                        str.append(" World") → "Hello World"
+insert()                                  Inserts the specified string at the specified index in another string             str.insert(5, " World") → "Hello World"
+delete()                                  Deletes the characters in a substring of this string                               str.delete(5, 11) → "Hello"    
+replace()                                 Replaces all occurrences of a specified character or substring with another         str.replace('l', 'x') → "Hexxo"
+reverse()                                 Reverses the characters in a string                                                 str.reverse() → "olleH"
+capitalize()                             Capitalizes the first character of each word in a string                            str.capitalize() → "Hello World"
+capacity()                                Returns the current capacity of the string                                           str.capacity() → 16
+length()                                  Returns the length of a string                                                        str.length() → 5
+setCharAt()                               Sets the character at the specified index in a string                                  str.setCharAt(0, 'h') → "hello"
+deleteCharAt()                            Deletes the character at the specified index in a string                               str.deleteCharAt(0) → "ello"
+
+
+
+
+============================================= Code ====================================
+
+
+public class StringMethodsDemo {
+ public static void main(String[]args){
+    
+    String str = "Welcome to Java Programming";
+    System.out.println("Original :\""+str+"\"");
+    System.out.println("Length of string: "+str.length());
+    System.out.println("Character at index 5: "+str.charAt(5));
+    System.out.println("Index of 'o': "+str.indexOf('o')); 
+    System.out.println("Last index of 'o': "+str.lastIndexOf('o'));
+    System.out.println("Substring from index 5 to 10: "+str.substring(5,10));
+    System.out.println("String in uppercase: "+str.toUpperCase());
+    System.out.println("String in lowercase: "+str.toLowerCase());
+    System.out.println("String after trimming: \""+str.trim()+"\"");
+
+
+ }
+
+    
+}
