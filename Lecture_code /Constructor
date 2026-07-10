@@ -1,0 +1,30 @@
+public class Car {
+    String brand;
+    int year;
+
+    public Car() {
+        this.brand = "Unknown Brand";
+        this.year = 2026;
+    }
+
+    public Car(String brand, int year) {
+        this.brand = brand; 
+        this.year = year;
+    }
+
+    public void displayDetails() {
+        System.out.println("Car Brand: " + brand + ", Year: " + year);
+    }
+
+    public static void main(String[] args) {
+        Car defaultCar = new Car();
+        
+        Car customCar = new Car("Tata", 2026);
+
+        System.out.print("Default ");
+        defaultCar.displayDetails();
+
+        System.out.print("Custom ");
+        customCar.displayDetails();
+    }
+}
