@@ -1,0 +1,17 @@
+public class OneDArrayDemo {
+    public static void main(String[] args) {
+        int[] marks = {85, 90, 78, 92, 88};
+        
+        System.out.println("All marks:");
+        for (int m : marks) {
+            System.out.println(m);
+        }
+        
+        int sum = 0;
+        for (int m : marks) {
+            sum += m;
+        }
+        System.out.println("Sum = " + sum);
+        System.out.println("Average = " + (sum / marks.length));
+    }
+}
