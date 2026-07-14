@@ -72,6 +72,69 @@ The course emphasizes practical implementation of programming concepts and equip
 
 ---
 
+
+---
+
+# 💻 Laboratory Practical List
+
+| Practical No. | Experiment Title |
+|--------------|------------------|
+| **1** | Write a Java program to display "Hello World" and demonstrate Java program structure, variables, data types, and type casting. |
+| **2** | Write a Java program to perform arithmetic, relational, logical, bitwise, and other operators. |
+| **3** | Write a Java program using conditional statements: (a) Even or Odd using if-else (b) Roots of Quadratic Equation using else-if ladder (c) Largest of three numbers using nested if-else (d) Weekday using switch statement. |
+| **4** | Write a Java program to demonstrate looping constructs: (a) Reverse of a number using while loop (b) Prime number using do-while loop (c) nth term of Fibonacci sequence using for loop. |
+| **5** | Write a Java program to demonstrate methods and recursion. |
+| **6** | Write a Java program to perform operations on one-dimensional and multi-dimensional arrays. |
+| **7** | Write a Java program to demonstrate arrays: (a) Maximum and Second Maximum without duplicates (b) Sort names in ascending order (c) Matrix Addition (d) 3×3 Matrix Multiplication. |
+| **8** | Write a Java program to demonstrate String, StringBuffer, and StringBuilder operations. |
+| **9** | Write a Java program to check whether a word is palindrome or not. |
+| **10** | Write a Java program to create a class and object and demonstrate constructors. |
+| **11** | Write a Java program to demonstrate encapsulation using access specifiers. |
+| **12** | Write a Java program to demonstrate inheritance: (a) Single Inheritance (b) Multilevel Inheritance (c) Hierarchical Inheritance (d) Hybrid Inheritance. |
+| **13** | Write a Java program to demonstrate the use of this and super keywords. |
+| **14** | Write a Java program to demonstrate polymorphism using method overloading and method overriding. |
+| **15** | Write a Java program to implement abstraction using abstract classes and interfaces (multiple inheritance). |
+| **16** | Write a Java program to demonstrate exception handling using try-catch-finally blocks. |
+| **17** | Write a Java program to implement custom exception handling. |
+| **18** | Write a Java program to implement List interface using ArrayList and LinkedList. |
+| **19** | Write a Java program to implement Set interface using HashSet and TreeSet. |
+| **20** | Write a Java program to implement Queue interface using PriorityQueue and Deque. |
+| **21** | Write a Java program to implement Map interface using HashMap and LinkedHashMap. |
+| **22** | Write a Java program to demonstrate multithreading using Thread class and Runnable interface. |
+
+---
+
+# 🧪 Laboratory Information
+
+| Particular | Details |
+|------------|---------|
+| **Course Name** | JAVA Programming Laboratory |
+| **Course Code** | 03010503PC04 |
+| **Lab Hours / Week** | 2 Hours |
+| **Credits** | 1 |
+| **Internal Marks** | 20 |
+| **External Practical Examination** | 30 |
+| **Total Marks** | 50 |
+| **Total Practicals** | 22 |
+
+---
+
+
+---
+
+# 🎯 Laboratory Course Outcomes (LCOs)
+
+| LCO | Description |
+|------|------------|
+| **LCO1** | Develop and execute Java programs using variables, operators, control statements, and loops. |
+| **LCO2** | Implement methods, recursion, arrays, and string handling techniques. |
+| **LCO3** | Design object-oriented applications using classes, inheritance, polymorphism, abstraction, and encapsulation. |
+| **LCO4** | Apply exception handling and custom exception mechanisms for robust applications. |
+| **LCO5** | Utilize Java Collections Framework including List, Set, Queue, and Map interfaces. |
+| **LCO6** | Develop multithreaded Java applications using Thread and Runnable interfaces. |
+
+---
+
 # 🎓 Course Outcomes (COs)
 
 Upon successful completion of this course, students will be able to:
@@ -173,6 +236,35 @@ JAVA-PROGRAMMING/
 ├── Notes/
 │
 └── README.md
+```
+# 📂 Recommended Laboratory Repository Structure
+
+```text
+JAVA-PROGRAMMING-LAB/
+│
+├── Practical-01-Hello-World/
+├── Practical-02-Operators/
+├── Practical-03-Conditional-Statements/
+├── Practical-04-Loops/
+├── Practical-05-Methods-and-Recursion/
+├── Practical-06-Array-Operations/
+├── Practical-07-Advanced-Array-Programs/
+├── Practical-08-String-Handling/
+├── Practical-09-Palindrome/
+├── Practical-10-Class-and-Object/
+├── Practical-11-Encapsulation/
+├── Practical-12-Inheritance/
+├── Practical-13-This-and-Super/
+├── Practical-14-Polymorphism/
+├── Practical-15-Abstraction-and-Interfaces/
+├── Practical-16-Exception-Handling/
+├── Practical-17-Custom-Exception/
+├── Practical-18-ArrayList-and-LinkedList/
+├── Practical-19-HashSet-and-TreeSet/
+├── Practical-20-PriorityQueue-and-Deque/
+├── Practical-21-HashMap-and-LinkedHashMap/
+├── Practical-22-Multithreading/
+
 ```
 
 ---
