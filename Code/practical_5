@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class MethodDemo {
+
+    static void displayMessage() {
+        System.out.println("Welcome to Java Programming");
+    }
+
+  
+    static int add(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        displayMessage();
+
+        System.out.print("Enter first number: ");
+        int x = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int y = sc.nextInt();
+
+        int sum = add(x, y);
+
+        System.out.println("Sum = " + sum);
+
+        sc.close();
+    }
+}
