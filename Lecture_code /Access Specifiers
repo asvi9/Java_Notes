@@ -1,0 +1,39 @@
+class Student {
+
+    // Private Access Specifier
+    private int rollNo = 101;
+
+    // Default Access Specifier
+    String name = "Ashwani";
+
+    // Protected Access Specifier
+    protected String course = "BCA";
+
+    // Public Access Specifier
+    public String college = "ABC College";
+
+    // Public method to access private variable
+    public void displayRollNo() {
+        System.out.println("Roll Number: " + rollNo);
+    }
+}
+
+public class AccessSpecifierDemo {
+
+    public static void main(String[] args) {
+
+        Student s = new Student();
+
+        // Accessing private member through public method
+        s.displayRollNo();
+
+        // Accessing default member
+        System.out.println("Name: " + s.name);
+
+        // Accessing protected member
+        System.out.println("Course: " + s.course);
+
+        // Accessing public member
+        System.out.println("College: " + s.college);
+    }
+}
