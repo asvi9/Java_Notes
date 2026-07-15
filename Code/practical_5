@@ -1,31 +1,57 @@
+// Factorial using Recursion
+
 import java.util.Scanner;
 
-public class MethodDemo {
+public class RecursionFactorial {
 
-    static void displayMessage() {
-        System.out.println("Welcome to Java Programming");
-    }
+    static int factorial(int n) {
 
-  
-    static int add(int a, int b) {
-        return a + b;
+        // Base Case
+        if (n == 0 || n == 1)
+            return 1;
+
+        // Recursive Call
+        return n * factorial(n - 1);
     }
 
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
 
-        displayMessage();
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
 
-        System.out.print("Enter first number: ");
-        int x = sc.nextInt();
+        int fact = factorial(num);
 
-        System.out.print("Enter second number: ");
-        int y = sc.nextInt();
-
-        int sum = add(x, y);
-
-        System.out.println("Sum = " + sum);
+        System.out.println("Factorial of " + num + " = " + fact);
 
         sc.close();
+    }
+}
+
+// 2nd method  Fibonacci Series
+
+public class RecursiveFibonacci {
+
+    static int fibonacci(int n) {
+
+        if (n == 0)
+            return 0;
+
+        if (n == 1)
+            return 1;
+
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    public static void main(String[] args) {
+
+        int n = 10;
+
+        System.out.println("Fibonacci Series:");
+
+        for (int i = 0; i < n; i++) {
+            System.out.print(fibonacci(i) + " ");
+        }
     }
 }
