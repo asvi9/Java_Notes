@@ -1,0 +1,62 @@
+
+class Student{
+    private int RollNo;
+    private String Name;
+    private double Marks;
+
+    public void setRollNo(int RollNo){
+        this.RollNo = RollNo;
+    }
+
+     public void setName(String Name){
+        this.Name = Name;
+    }
+
+     public void setMarks(double Marks){
+        if(Marks >=0 && Marks <=100){
+            this.Marks = Marks;
+        }else{
+            System.out.println("Invalid Marks");
+            this.Marks =0;
+        }
+    }
+
+    public int getRollNo(){
+        return RollNo;
+    }
+
+     public String getName(){
+        return Name;
+    }
+
+     public double  getMarks(){
+        return Marks;
+    }
+}
+
+public class EncapsulationDemo {
+
+    public static void main(String[] args) {
+
+        Student s = new Student();
+
+        s.setRollNo(101);
+        s.setName("Aman");
+        s.setMarks(70.5);
+
+
+        System.out.println("Student Details: ");
+        System.out.println("RollNo." + s.getRollNo());
+        System.out.println("Name: " +  s.getName());
+        System.out.println("Marks:" + s.getMarks());
+        System.out.println("==========================");
+
+
+        System.out.println("\n----------------Inavalid Marks----------");
+        s.setMarks(150);
+        System.out.println("Inavlid Input: " + s.getMarks());
+        
+
+    }
+    
+}
