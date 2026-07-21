@@ -1,3 +1,4 @@
+========================== Default and parameterized constructor =========================
 public class Car {
     String brand;
     int year;
@@ -25,6 +26,57 @@ public class Car {
         defaultCar.displayDetails();
 
         System.out.print("Custom ");
+        customCar.displayDetails();
+    }
+}
+
+
+
+
+
+====================================== Default and parameterized & copy & private constructor ======================================
+
+
+
+
+
+
+
+
+
+
+public class Car{
+    String brand;
+    int year;
+
+    public Car(){
+        this.brand = "Unknown Brand";
+        this.year = 2026;
+
+    }
+    public Car(String brand, int year){
+        this.brand=brand;
+        this.year=year;
+    }
+    public Car(Car otherCar){
+        this.brand=otherCar.brand;
+        this.year=otherCar.year;
+    }
+    void displayDetails(){
+        System.out.println("Car Brand:" +brand+ ",Year: " +year);
+
+    }
+    public static void main(String[] args){
+        Car defaultCar = new Car();
+        
+        Car customCar = new Car("Tata",2026);
+        Car copiedCar = new Car(customCar);
+        System.out.println("Copied Car:");
+        copiedCar.displayDetails();
+
+        System.out.println("Default:");
+        defaultCar.displayDetails();
+        System.out.println("Custom Car:");
         customCar.displayDetails();
     }
 }
