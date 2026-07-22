@@ -1,0 +1,86 @@
+====================== 1st Part =========================
+
+import java.util.Scanner;
+
+public class MaxSecondMax {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter size of array: ");
+        int n = sc.nextInt();
+
+        int arr[] = new int[n];
+
+        System.out.println("Enter array elements:");
+        for(int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int max = Integer.MIN_VALUE;
+        int secondMax = Integer.MIN_VALUE;
+
+        for(int i = 0; i < n; i++) {
+
+            if(arr[i] > max) {
+                secondMax = max;
+                max = arr[i];
+            }
+            else if(arr[i] > secondMax && arr[i] != max) {
+                secondMax = arr[i];
+            }
+        }
+
+        System.out.println("Maximum Value = " + max);
+        System.out.println("Second Maximum Value = " + secondMax);
+
+        sc.close();
+    }
+}
+
+
+
+
+========================================== 2nd Part =========================================
+
+import java.util.Scanner;
+
+public class SortNames {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of names: ");
+        int n = sc.nextInt();
+        sc.nextLine();
+
+        String names[] = new String[n];
+
+        System.out.println("Enter names:");
+
+        for(int i = 0; i < n; i++) {
+            names[i] = sc.nextLine();
+        }
+
+        for(int i = 0; i < n - 1; i++) {
+            for(int j = i + 1; j < n; j++) {
+
+                if(names[i].compareToIgnoreCase(names[j]) > 0) {
+                    String temp = names[i];
+                    names[i] = names[j];
+                    names[j] = temp;
+                }
+            }
+        }
+
+        System.out.println("\nNames in Ascending Order:");
+
+        for(String name : names) {
+            System.out.println(name);
+        }
+
+        sc.close();
+    }
+}
+
+================================== 3 Part ================================
