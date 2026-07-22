@@ -84,3 +84,102 @@ public class SortNames {
 }
 
 ================================== 3 Part ================================
+
+import java.util.Scanner;
+
+public class MatrixAddition {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int a[][] = new int[3][3];
+        int b[][] = new int[3][3];
+        int sum[][] = new int[3][3];
+
+        System.out.println("Enter First Matrix:");
+
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                a[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println("Enter Second Matrix:");
+
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                b[i][j] = sc.nextInt();
+            }
+        }
+
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                sum[i][j] = a[i][j] + b[i][j];
+            }
+        }
+
+        System.out.println("\nResultant Matrix:");
+
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                System.out.print(sum[i][j] + "\t");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
+
+
+============================ 4th part ==============================
+
+import java.util.Scanner;
+
+public class MatrixMultiplication {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int a[][] = new int[3][3];
+        int b[][] = new int[3][3];
+        int result[][] = new int[3][3];
+
+        System.out.println("Enter First Matrix:");
+
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                a[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println("Enter Second Matrix:");
+
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                b[i][j] = sc.nextInt();
+            }
+        }
+
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                result[i][j] = 0;
+
+                for(int k = 0; k < 3; k++) {
+                    result[i][j] += a[i][k] * b[k][j];
+                }
+            }
+        }
+
+        System.out.println("\nMultiplication Matrix:");
+
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                System.out.print(result[i][j] + "\t");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
