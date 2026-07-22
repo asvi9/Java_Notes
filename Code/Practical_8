@@ -1,0 +1,20 @@
+public class StringDemo {
+    public static void main(String[] args) {
+
+        String str1 = "Hello";
+        String str2 = "Java";
+
+       
+        String result = str1 + " " + str2;
+
+        System.out.println("String 1: " + str1);
+        System.out.println("String 2: " + str2);
+        System.out.println("Concatenated String: " + result);
+
+       
+        System.out.println("Length: " + result.length());
+        System.out.println("Uppercase: " + result.toUpperCase());
+        System.out.println("Lowercase: " + result.toLowerCase());
+        System.out.println("Character at Index 1: " + result.charAt(1));
+    }
+}
