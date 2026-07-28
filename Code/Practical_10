@@ -48,11 +48,14 @@ public class ParameterizedConstructorDemo {
 ============================================= 3rd Part =====================================
 
 class Student {
-
     int rollNo;
     String name;
 
-    // Parameterized Constructor
+    Student() {
+        rollNo = 20;
+        name = "Not Assign";
+    }
+
     Student(int r, String n) {
         rollNo = r;
         name = n;
@@ -61,14 +64,18 @@ class Student {
     void display() {
         System.out.println("Roll No: " + rollNo);
         System.out.println("Name: " + name);
+        System.out.println();
     }
 }
 
-public class ParameterizedConstructorDemo {
+public class Main {
     public static void main(String[] args) {
-
-        Student s1 = new Student(101, "Ashwani");
+        Student s1 = new Student();
+        Student s2 = new Student(20, "Omkar Jadu");
 
         s1.display();
+        s2.display();
+    }
+}
     }
 }
