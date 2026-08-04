@@ -1,0 +1,66 @@
+interface Drawable {
+    // Constants (public static final)
+    String TYPE = "Shape";
+    
+    // Abstract method (public abstract)
+    void draw();
+    
+    // Default method (Java 8+)
+    default void display() {
+        System.out.println("Displaying shape");
+    }
+    
+    // Static method (Java 8+)
+    static void info() {
+        System.out.println("This is a drawable interface");
+    }
+}
+
+interface Colorable {
+    void setColor(String color);
+    String getColor();
+}
+
+// Class implementing single interface
+class Circle implements Drawable {
+    @Override
+    public void draw() {
+        System.out.println("Drawing Circle");
+    }
+}
+
+// Class implementing multiple interfaces
+class ColoredCircle implements Drawable, Colorable {
+    private String color;
+    
+    @Override
+    public void draw() {
+        System.out.println("Drawing Colored Circle");
+    }
+    
+    @Override
+    public void setColor(String color) {
+        this.color = color;
+    }
+    
+    @Override
+    public String getColor() {
+        return color;
+    }
+}
+
+// Usage
+public class InterfaceDemo {
+    public static void main(String[] args) {
+        Circle c = new Circle();
+        c.draw();          // Drawing Circle
+        c.display();       // Displaying shape
+        System.out.println(Drawable.TYPE);  // Shape
+        Drawable.info();   // This is a drawable interface
+        
+        ColoredCircle cc = new ColoredCircle();
+        cc.setColor("Blue");
+        System.out.println(cc.getColor());  // Blue
+        cc.draw();         // Drawing Colored Circle
+    }
+}
