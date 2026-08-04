@@ -1,0 +1,66 @@
+// Abstract class
+abstract class Shape {
+    String color;
+    
+    // Constructor
+    Shape(String color) {
+        this.color = color;
+    }
+    
+    // Abstract method (no body)
+    abstract double calculateArea();
+    
+    // Concrete method (with body)
+    void display() {
+        System.out.println("Color: " + color);
+    }
+}
+
+// Concrete class (must implement abstract methods)
+class Circle extends Shape {
+    double radius;
+    
+    Circle(String color, double radius) {
+        super(color);
+        this.radius = radius;
+    }
+    
+    @Override
+    double calculateArea() {
+        return 3.14 * radius * radius;
+    }
+}
+
+class Rectangle extends Shape {
+    double length, width;
+    
+    Rectangle(String color, double length, double width) {
+        super(color);
+        this.length = length;
+        this.width = width;
+    }
+    
+    @Override
+    double calculateArea() {
+        return length * width;
+    }
+}
+
+// Usage
+public class AbstractDemo {
+    public static void main(String[] args) {
+        // Shape s = new Shape();  // ERROR! Cannot instantiate
+        
+        Circle c = new Circle("Red", 5);
+        c.display();               // Color: Red
+        System.out.println(c.calculateArea());  // 78.5
+        
+        Rectangle r = new Rectangle("Blue", 4, 6);
+        r.display();               // Color: Blue
+        System.out.println(r.calculateArea());  // 24.0
+        
+        // Polymorphism with abstract class
+        Shape s = new Circle("Green", 3);
+        System.out.println(s.calculateArea());  // 28.26
+    }
+}
