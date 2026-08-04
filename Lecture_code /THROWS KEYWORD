@@ -1,0 +1,35 @@
+import java.io.*;
+
+public class ThrowsDemo {
+    
+    // Method declares that it may throw IOException
+    static void readFile() throws IOException {
+        FileReader file = new FileReader("test.txt");
+        BufferedReader br = new BufferedReader(file);
+        String line = br.readLine();
+        System.out.println(line);
+        br.close();
+    }
+    
+    // Method declares multiple exceptions
+    static void processFile() throws IOException, ClassNotFoundException {
+        readFile();
+        Class.forName("MyClass");
+    }
+    
+    public static void main(String[] args) {
+        // Caller must handle the exception
+        try {
+            readFile();
+        } catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
+        }
+        
+        // Another way: Delegate further
+        try {
+            processFile();
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+    }
+}
