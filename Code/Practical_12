@@ -1,0 +1,131 @@
+============================ (a) Single Inheritance =========================
+
+// Parent Class
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+// Child Class
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+public class SingleInheritanceDemo {
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+
+        d.eat();
+        d.bark();
+    }
+}
+
+
+================================= (b) Multilevel Inheritance ===========================
+
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+class Puppy extends Dog {
+    void weep() {
+        System.out.println("Puppy is weeping");
+    }
+}
+
+public class MultilevelInheritanceDemo {
+    public static void main(String[] args) {
+
+        Puppy p = new Puppy();
+
+        p.eat();
+        p.bark();
+        p.weep();
+    }
+}
+
+
+========================= (c) Hierarchical Inheritance =============================
+
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+class Cat extends Animal {
+    void meow() {
+        System.out.println("Cat is meowing");
+    }
+}
+
+public class HierarchicalInheritanceDemo {
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+        Cat c = new Cat();
+
+        d.eat();
+        d.bark();
+
+        c.eat();
+        c.meow();
+    }
+}
+
+
+============================= (d) Hybrid Inheritance (Using Interface) =====================
+
+// Interface
+interface Animal {
+    void eat();
+}
+
+// Parent Class
+class Dog implements Animal {
+
+    public void eat() {
+        System.out.println("Dog is eating");
+    }
+
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+// Child Class
+class Puppy extends Dog {
+
+    void weep() {
+        System.out.println("Puppy is weeping");
+    }
+}
+
+public class HybridInheritanceDemo {
+    public static void main(String[] args) {
+
+        Puppy p = new Puppy();
+
+        p.eat();
+        p.bark();
+        p.weep();
+    }
+}
