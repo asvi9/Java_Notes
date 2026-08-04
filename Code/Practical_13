@@ -1,0 +1,41 @@
+class Person {
+
+    String name = "Rahul";
+
+    Person() {
+        System.out.println("Parent Class Constructor");
+    }
+
+    void display() {
+        System.out.println("Parent Class Method");
+    }
+}
+
+class Student extends Person {
+
+    String name = "Amit";
+
+    Student() {
+        super();   // Calls parent class constructor
+        System.out.println("Child Class Constructor");
+    }
+
+    void show() {
+
+        System.out.println("Using this keyword : " + this.name);
+        System.out.println("Using super keyword: " + super.name);
+
+        this.display();   // Calls parent class method (inherited)
+        super.display();  // Calls parent class method explicitly
+    }
+}
+
+public class ThisSuperDemo {
+
+    public static void main(String[] args) {
+
+        Student s = new Student();
+
+        s.show();
+    }
+}
