@@ -1,0 +1,31 @@
+class BankAccount {
+    private double balance;      // Data hidden
+    
+    // Getter (Read access)
+    public double getBalance() {
+        return balance;
+    }
+    
+    // Setter (Write access with validation)
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        } else {
+            System.out.println("Invalid deposit amount");
+        }
+    }
+    
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+        } else {
+            System.out.println("Insufficient balance");
+        }
+    }
+}
+
+// Usage
+BankAccount acc = new BankAccount();
+acc.deposit(1000);          // Set balance to 1000
+acc.withdraw(300);          // Withdraw 300
+System.out.println(acc.getBalance());  // 700
