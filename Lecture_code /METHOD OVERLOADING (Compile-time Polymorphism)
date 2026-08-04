@@ -1,0 +1,28 @@
+class MathOperations {
+    // Overloaded methods
+    int multiply(int a, int b) {
+        return a * b;
+    }
+    
+    int multiply(int a, int b, int c) {
+        return a * b * c;
+    }
+    
+    double multiply(double a, double b) {
+        return a * b;
+    }
+    
+    double multiply(int a, double b) {
+        return a * b;
+    }
+}
+
+public class TestOverloading {
+    public static void main(String[] args) {
+        MathOperations mo = new MathOperations();
+        System.out.println(mo.multiply(5, 10));        // 50
+        System.out.println(mo.multiply(2, 3, 4));      // 24
+        System.out.println(mo.multiply(2.5, 3.5));     // 8.75
+        System.out.println(mo.multiply(5, 2.5));       // 12.5
+    }
+}
