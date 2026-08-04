@@ -1,0 +1,47 @@
+class Vehicle {
+    void start() {
+        System.out.println("Vehicle is starting");
+    }
+    
+    void stop() {
+        System.out.println("Vehicle is stopping");
+    }
+}
+
+class Car extends Vehicle {
+    @Override
+    void start() {    // Overriding start method
+        System.out.println("Car is starting with key");
+    }
+    
+    // Additional method specific to Car
+    void honk() {
+        System.out.println("Car is honking");
+    }
+}
+
+class Bike extends Vehicle {
+    @Override
+    void start() {    // Overriding start method
+        System.out.println("Bike is starting with kick");
+    }
+}
+
+public class TestOverriding {
+    public static void main(String[] args) {
+        Vehicle v1 = new Vehicle();
+        v1.start();    // Vehicle is starting
+        
+        Car c = new Car();
+        c.start();     // Car is starting with key
+        
+        Bike b = new Bike();
+        b.start();     // Bike is starting with kick
+        
+        // Runtime Polymorphism
+        Vehicle v2 = new Car();    // Upcasting
+        v2.start();    // Car is starting with key (Runtime)
+        v2.stop();     // Vehicle is stopping (Inherited)
+        // v2.honk();  // ERROR! Cannot call child-specific method
+    }
+}
