@@ -1,0 +1,12 @@
+import java.io.*;
+
+public class CheckedExceptionDemo {
+    public static void main(String[] args) {
+        // Must handle FileNotFoundException
+        try {
+            FileReader file = new FileReader("test.txt");
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found: " + e.getMessage());
+        }
+    }
+}
