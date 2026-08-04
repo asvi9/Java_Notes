@@ -1,0 +1,21 @@
+// Parent class
+class Animal {
+    String name;
+    
+    void eat() {
+        System.out.println("Eating...");
+    }
+}
+
+// Child class
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Barking...");
+    }
+}
+
+// Usage
+Dog d = new Dog();
+d.name = "Tommy";    // Inherited from Animal
+d.eat();             // Inherited from Animal
+d.bark();            // Dog's own method
