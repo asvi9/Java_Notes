@@ -1,0 +1,12 @@
+public class UncheckedExceptionDemo {
+    public static void main(String[] args) {
+        // Compiler does NOT force handling
+        int result = 10 / 0;    // ArithmeticException at runtime
+        
+        String str = null;
+        System.out.println(str.length());    // NullPointerException
+        
+        int[] arr = {1, 2, 3};
+        System.out.println(arr[5]);    // ArrayIndexOutOfBoundsException
+    }
+}
