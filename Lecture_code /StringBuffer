@@ -1,0 +1,24 @@
+public class StringBufferDemo {
+    public static void main(String[] args) {
+        StringBuffer sb = new StringBuffer("Hello");
+        System.out.println("Original: " + sb);
+        
+        sb.append(" World");
+        System.out.println("After append: " + sb);   // Hello World
+        
+        sb.insert(5, " Java");
+        System.out.println("After insert: " + sb);   // Hello Java World
+        
+        sb.replace(6, 10, "Python");
+        System.out.println("After replace: " + sb);  // Hello Python World
+        
+        sb.delete(6, 12);
+        System.out.println("After delete: " + sb);   // Hello World
+        
+        sb.reverse();
+        System.out.println("After reverse: " + sb);  // dlroW olleH
+        
+        System.out.println("Capacity: " + sb.capacity());
+        System.out.println("Length: " + sb.length());
+    }
+}
