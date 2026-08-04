@@ -1,0 +1,103 @@
+============================ Checked Custom Exception =========================
+
+
+// Custom checked exception (extends Exception)
+class InsufficientBalanceException extends Exception {
+    private double balance;
+    private double amount;
+    
+    // Default constructor
+    public InsufficientBalanceException() {
+        super("Insufficient balance!");
+    }
+    
+    // Parameterized constructor
+    public InsufficientBalanceException(String message) {
+        super(message);
+    }
+    
+    // Constructor with additional data
+    public InsufficientBalanceException(double balance, double amount) {
+        super("Insufficient balance. Balance: " + balance + ", Requested: " + amount);
+        this.balance = balance;
+        this.amount = amount;
+    }
+    
+    // Additional methods
+    public double getBalance() {
+        return balance;
+    }
+    
+    public double getAmount() {
+        return amount;
+    }
+}
+
+// Unchecked custom exception (extends RuntimeException)
+class InvalidAgeException extends RuntimeException {
+    private int age;
+    
+    public InvalidAgeException(int age) {
+        super("Invalid age: " + age + ". Age must be between 0 and 120");
+        this.age = age;
+    }
+    
+    public int getAge() {
+        return age;
+    }
+}
+
+
+
+
+=============================== Using Custom Exceptions ============================
+
+
+
+
+
+class BankAccount {
+    private double balance;
+    
+    public BankAccount(double balance) {
+        this.balance = balance;
+    }
+    
+    public void withdraw(double amount) throws InsufficientBalanceException {
+        if (amount > balance) {
+            throw new InsufficientBalanceException(balance, amount);
+        }
+        balance -= amount;
+        System.out.println("Withdrawn: " + amount + ", Remaining: " + balance);
+    }
+    
+    public void checkAge(int age) {
+        if (age < 0 || age > 120) {
+            throw new InvalidAgeException(age);
+        }
+        System.out.println("Age is valid: " + age);
+    }
+}
+
+public class CustomExceptionDemo {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount(1000);
+        
+        // Handling checked custom exception
+        try {
+            account.withdraw(1500);    // Throws InsufficientBalanceException
+        } catch (InsufficientBalanceException e) {
+            System.out.println("Error: " + e.getMessage());
+            System.out.println("Balance: " + e.getBalance());
+            System.out.println("Requested: " + e.getAmount());
+        }
+        
+        // Handling unchecked custom exception
+        try {
+            account.checkAge(150);    // Throws InvalidAgeException
+        } catch (InvalidAgeException e) {
+            System.out.println("Error: " + e.getMessage());
+            System.out.println("Age provided: " + e.getAge());
+        }
+    }
+}
