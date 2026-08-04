@@ -1,0 +1,53 @@
+class Student {
+
+    // Private data members
+    private int rollNo;
+    private String name;
+    private double marks;
+
+    // Setter methods
+    public void setRollNo(int rollNo) {
+        this.rollNo = rollNo;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setMarks(double marks) {
+        this.marks = marks;
+    }
+
+    // Getter methods
+    public int getRollNo() {
+        return rollNo;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getMarks() {
+        return marks;
+    }
+}
+
+public class EncapsulationDemo {
+
+    public static void main(String[] args) {
+
+        Student student = new Student();
+
+        // Setting values
+        student.setRollNo(101);
+        student.setName("Rahul");
+        student.setMarks(89.5);
+
+        // Displaying values
+        System.out.println("Student Details");
+        System.out.println("----------------");
+        System.out.println("Roll No : " + student.getRollNo());
+        System.out.println("Name    : " + student.getName());
+        System.out.println("Marks   : " + student.getMarks());
+    }
+}
