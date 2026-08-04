@@ -1,0 +1,28 @@
+import java.io.*;
+
+public class FinallyDemo {
+    public static void main(String[] args) {
+        FileInputStream file = null;
+        
+        try {
+            file = new FileInputStream("test.txt");
+            System.out.println("File opened successfully");
+            int data = file.read();
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found!");
+        } catch (IOException e) {
+            System.out.println("Error reading file!");
+        } finally {
+            // Cleanup code - ALWAYS executes
+            if (file != null) {
+                try {
+                    file.close();
+                    System.out.println("File closed");
+                } catch (IOException e) {
+                    System.out.println("Error closing file");
+                }
+            }
+            System.out.println("Finally block always executes!");
+        }
+    }
+}
