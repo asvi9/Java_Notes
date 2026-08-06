@@ -1,0 +1,110 @@
+class BankAccount {
+    private double balance;
+    
+    public BankAccount(double balance) {
+        this.balance = balance;
+    }
+    
+    public void withdraw(double amount) throws InsufficientBalanceException {
+        if (amount > balance) {
+            throw new InsufficientBalanceException(balance, amount);
+        }
+        balance -= amount;
+        System.out.println("Withdrawn: " + amount + ", Remaining: " + balance);
+    }
+    
+    public void checkAge(int age) {
+        if (age < 0 || age > 120) {
+            throw new InvalidAgeException(age);
+        }
+        System.out.println("Age is valid: " + age);
+    }
+}
+
+public class CustomExceptionDemo {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount(1000);
+        
+        // Handling checked custom exception
+        try {
+            account.withdraw(1500);    // Throws InsufficientBalanceException
+        } catch (InsufficientBalanceException e) {
+            System.out.println("Error: " + e.getMessage());
+            System.out.println("Balance: " + e.getBalance());
+            System.out.println("Requested: " + e.getAmount());
+        }
+        
+        // Handling unchecked custom exception
+        try {
+            account.checkAge(150);    // Throws InvalidAgeException
+        } catch (InvalidAgeException e) {
+            System.out.println("Error: " + e.getMessage());
+            System.out.println("Age provided: " + e.getAge());
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+======================================= Complete code Flow Diagram ====================================================
+
+
+
+
+  Program Start
+    ↓
+BankAccount account = new BankAccount(1000)
+    ↓
+┌─────────────────────────────────────────┐
+│   TRY BLOCK 1                           │
+│   account.withdraw(1500) call           │
+│       ↓                                 │
+│   withdraw method                       │
+│       ↓                                 │
+│   1500 > 1000? → YES                    │
+│       ↓                                 │
+│   throw InsufficientBalanceException    │
+│       ↓                                 │
+│   ❌ Exception aaya!                    │
+└─────────────────────────────────────────┘
+    ↓
+┌─────────────────────────────────────────┐
+│   CATCH BLOCK 1                         │
+│   catch (InsufficientBalanceException)  │
+│       ↓                                 │
+│   Print: Error message                  │
+│   Print: Balance                        │
+│   Print: Requested amount               │
+└─────────────────────────────────────────┘
+    ↓
+┌─────────────────────────────────────────┐
+│   TRY BLOCK 2                           │
+│   account.checkAge(150) call            │
+│       ↓                                 │
+│   checkAge method                       │
+│       ↓                                 │
+│   150 > 120? → YES                      │
+│       ↓                                 │
+│   throw InvalidAgeException             │
+│       ↓                                 │
+│   ❌ Exception aaya!                    │
+└─────────────────────────────────────────┘
+    ↓
+┌─────────────────────────────────────────┐
+│   CATCH BLOCK 2                         │
+│   catch (InvalidAgeException)           │
+│       ↓                                 │
+│   Print: Error message                  │
+│   Print: Age provided                   │
+└─────────────────────────────────────────┘
+    ↓
+Program End
