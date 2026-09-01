@@ -1,0 +1,66 @@
+// MyThread class extends the Thread class,
+// meaning it can act as a thread and run independently
+
+class MyThread extends Thread {
+    
+    // @Override annotation indicates we are overriding the run() method from parent Thread class
+
+    @Override 
+    public void run() {
+        // Loop runs 5 times, from i = 1 to i = 5
+        for(int i = 1; i <= 5; i++) {
+            
+            // Thread.currentThread() - returns reference of the currently executing thread
+            // .getName() - returns the name of that thread (default: Thread-0, Thread-1, etc.)
+            // "count" + i - prints the current iteration number
+
+            System.out.println(Thread.currentThread().getName() + "-count" + i);
+            
+            try {
+
+                // Thread.sleep(500) - pauses the current thread for 500 milliseconds (0.5 seconds)
+                // This allows other threads to get CPU time and execute
+                // It throws a checked exception, hence wrapped in try-catch
+
+                Thread.sleep(500);
+            } catch (Exception e) {
+
+                // If any interruption occurs during sleep, catch and print the error message
+
+                System.out.println(e.getMessage());
+            }
+        }
+        // When the loop completes, the thread automatically terminates
+    }
+}
+
+// Main class where the program starts execution
+
+public class Demo {
+    public static void main(String[] args) {
+        
+        // Create first object (thread) of MyThread class
+        // Default name for this thread will be "Thread-0"
+
+        MyThread t1 = new MyThread();
+        
+        // Create second object (thread) of MyThread class
+        // Default name for this thread will be "Thread-1"
+
+        MyThread t2 = new MyThread();
+
+        // t1.start() - starts Thread-0
+        // This thread will execute its run() method
+        // JVM puts this thread into Runnable state
+
+        t1.start();
+        
+        // t2.start() - starts Thread-1
+        // This thread will also execute its run() method
+        // Both threads will run in parallel (concurrent execution)
+
+        t2.start();
+        
+       
+    }
+}
