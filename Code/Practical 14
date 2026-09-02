@@ -1,0 +1,75 @@
+============================= (a) Method Overloading – Compile-Time Polymorphism =====================
+
+class Calculator {
+
+    // Method with two integer parameters
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method with three integer parameters
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // Method with two double parameters
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class MethodOverloadingDemo {
+
+    public static void main(String[] args) {
+
+        Calculator c = new Calculator();
+
+        System.out.println("Addition of two integers: " + c.add(10, 20));
+
+        System.out.println("Addition of three integers: "
+                + c.add(10, 20, 30));
+
+        System.out.println("Addition of two double values: "
+                + c.add(10.5, 20.5));
+    }
+}
+
+
+============================================= (b) Method Overriding – Run-Time Polymorphism ==========================
+
+class Animal {
+
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+
+    @Override
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class MethodOverridingDemo {
+
+    public static void main(String[] args) {
+
+        Animal a;
+
+        a = new Dog();
+        a.sound();
+
+        a = new Cat();
+        a.sound();
+    }
+}
