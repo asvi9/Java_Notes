@@ -1,0 +1,158 @@
+========================= (a) Abstraction Using Abstract Class =====================
+
+abstract class Shape {
+
+    // Abstract method
+    abstract void area();
+
+    // Concrete method
+    void display() {
+        System.out.println("This is a shape.");
+    }
+}
+
+class Circle extends Shape {
+
+    int radius = 5;
+
+    // Implementing abstract method
+    @Override
+    void area() {
+        double result = Math.PI * radius * radius;
+        System.out.println("Area of Circle = " + result);
+    }
+}
+
+public class AbstractClassDemo {
+
+    public static void main(String[] args) {
+
+        Circle c = new Circle();
+
+        c.display();
+        c.area();
+    }
+}
+
+=========================== (b) Abstraction Using Interface =======================
+
+interface Animal {
+
+    void sound();
+}
+
+class Dog implements Animal {
+
+    @Override
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class InterfaceDemo {
+
+    public static void main(String[] args) {
+
+        Animal a = new Dog();
+
+        a.sound();
+    }
+}
+
+========================== (c) Multiple Inheritance Using Interfaces =========================
+
+interface Printable {
+
+    void print();
+}
+
+interface Showable {
+
+    void show();
+}
+
+// Implementing two interfaces
+class Demo implements Printable, Showable {
+
+    @Override
+    public void print() {
+        System.out.println("Printing the document");
+    }
+
+    @Override
+    public void show() {
+        System.out.println("Displaying the document");
+    }
+}
+
+public class MultipleInheritanceDemo {
+
+    public static void main(String[] args) {
+
+        Demo d = new Demo();
+
+        d.print();
+        d.show();
+    }
+}
+
+
+
+===========================================  Optional code  ================================================
+
+
+
+======================== (d) Combined Program: Abstract Class + Multiple Interfaces  ========================
+
+abstract class Person {
+
+    // Abstract method
+    abstract void work();
+
+    // Concrete method
+    void display() {
+        System.out.println("Person details");
+    }
+}
+
+interface Teacher {
+
+    void teach();
+}
+
+interface Researcher {
+
+    void research();
+}
+
+// Inheriting abstract class and implementing two interfaces
+class Professor extends Person implements Teacher, Researcher {
+
+    @Override
+    void work() {
+        System.out.println("Professor is working");
+    }
+
+    @Override
+    public void teach() {
+        System.out.println("Professor is teaching");
+    }
+
+    @Override
+    public void research() {
+        System.out.println("Professor is doing research");
+    }
+}
+
+public class AbstractionMultipleInheritance {
+
+    public static void main(String[] args) {
+
+        Professor p = new Professor();
+
+        p.display();
+        p.work();
+        p.teach();
+        p.research();
+    }
+}
