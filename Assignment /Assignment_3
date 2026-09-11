@@ -1,0 +1,16 @@
+3 AIML 7
+3 AIML 20
+3 AIML 21
+
+============================================================================
+
+1. What is a constructor?
+2. Difference between constructor and method?
+3. Why multiple inheritance is not supported through classes?
+4. Program for constructor overloading.
+5. Program demonstrating this keyword.
+6. What is a custom exception?
+7. Program demonstrating throw keyword.
+8. What is a checked exception? Give examples of checked exceptions.
+9. Difference between Error and Exception?
+10. Program demonstrating nested try-catch
