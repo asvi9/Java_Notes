@@ -1,0 +1,30 @@
+import java.util.HashSet;
+import java.util.Set;
+
+public class SetDemo {
+    public static void main(String[] args) {
+
+        // HAshset
+        Set<Integer> hashSet = new HashSet<>();
+
+        hashSet.add(10);
+        hashSet.add(50);
+        hashSet.add(70);    
+        hashSet.add(20);
+        System.out.println("HashSet: " + hashSet);
+
+        hashSet.remove(50);
+        System.out.println("HashSet after removal: " + hashSet);
+
+        // TreeSet
+        Set<Integer> treeSet = new java.util.TreeSet<>();
+        treeSet.add(50);
+        treeSet.add(10);
+        treeSet.add(70);
+        treeSet.add(20);
+        System.out.println("TreeSet: " + treeSet);
+
+        treeSet.remove(10);
+        System.out.println("TreeSet after removal: " + treeSet);
+    }
+}
