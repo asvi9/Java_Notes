@@ -1,0 +1,16 @@
+
+import java.io.IOException;
+import java.io.FileWriter;
+
+public class WritingJavaFile {
+    public static void main(String[] args)
+      throws IOException
+
+      {
+        FileWriter writer = new FileWriter("data.txt");
+        writer.write("Hello World");
+        writer.close();
+        System.out.println("Data Written Successfully:");
+      }
+     
+}
