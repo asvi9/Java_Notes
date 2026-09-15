@@ -1,0 +1,54 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public class ListDemo {
+    public static void main(String[] args) {
+
+
+        //array list
+
+        List<String> arrayList = new ArrayList<>();
+        arrayList.add("Java");
+        arrayList.add("Python");
+        arrayList.add("C++");
+        arrayList.add("JavaScript");
+
+        System.out.println("Array List: " + arrayList);
+        System.out.println("Element at index 1: " + arrayList.get(1));
+
+        arrayList.remove("C++");
+        System.out.println("Array List after removal: " + arrayList);
+
+        // Linked list
+
+        List<String> linkedList = new LinkedList<>();
+        linkedList.add("Apple");
+        linkedList.add("Banana");
+        linkedList.add("Cherry");   
+        linkedList.add("Date");
+
+        System.out.println("Linked List: " + linkedList);
+        System.out.println("Element at index 2: " + linkedList.get(2));
+
+        linkedList.remove("Banana");
+        System.out.println("Linked List after removal: " + linkedList);
+
+    }
+    
+}
+
+
+
+==================================== Visual Representation (Do not copy in lab manual) =========================
+
+ArrayList (Dynamic Array):
+┌──────┬────────┬────────┬──────┐
+│ Java │ Python │   C    │ Java │
+└──────┴────────┴────────┴──────┘
+   0       1       2       3
+
+LinkedList (Doubly-Linked List):
+┌──────┐    ┌────────┐    ┌───────┐    ┌──────┐
+│ Apple│⇄  │ Banana │⇄  │ Mango │⇄  │ Apple│
+└──────┘    └────────┘    └───────┘    └──────┘
