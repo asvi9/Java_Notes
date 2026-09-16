@@ -1,0 +1,44 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+public class QueueDemo {
+    public static void main(String[] args) {
+        
+        // priority queue 
+        Queue<Integer> priorityQueue = new PriorityQueue<>();
+        priorityQueue.add(10);
+        priorityQueue.add(50);
+        priorityQueue.add(30);
+        priorityQueue.add(15);  
+
+        System.out.println("PriorityQueue: " + priorityQueue);
+        System.out.println("Head of the queue: " + priorityQueue.peek()); 
+        // peek: Returns the head element without removing it.
+
+        System.out.println("Removed element: " + priorityQueue.poll());
+        // poll() : Returns and removes the head element.
+
+        System.out.println("PriorityQueue after removal: " + priorityQueue);
+
+        // Deque
+
+            Deque<Integer> deque = new ArrayDeque<>();
+            deque.add(10);
+            deque.add(50);  
+            deque.add(30);
+            deque.add(40);
+            System.out.println("\nDeque: " + deque);
+            System.out.println("Head of the deque: " + deque.peekFirst());
+            // peekFirst() method front ka element return karta hai.
+            System.out.println("Last Elemenet: " + deque.peekLast());
+            // peekLast() method last ka element return karta hai.(remove nhi karega)
+
+            deque.removeFirst();
+            deque.removeLast();
+            System.out.println("Deque after removal from both ends: " + deque);
+        
+    }
+    
+}
