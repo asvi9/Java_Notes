@@ -1,0 +1,37 @@
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class MapDemo {
+    public static void main(String[] args) {
+        
+        // HashMap: stores key-value pairs without guaranteeing any particular order.
+        Map<Integer, String> hashMap = new HashMap<>();
+        hashMap.put(101, "Amit");
+        hashMap.put(102, "Priya");
+        hashMap.put(103, "Muskan");
+        hashMap.put(104, "Rohit");
+
+        System.out.println("HashMap: " + hashMap); 
+        
+        System.out.println("Value for key 102: " + hashMap.get(102));
+        hashMap.remove(103);
+        System.out.println("HashMap after removal: " + hashMap);
+
+        // LinkedHashMap: maintains the insertion order of key-value pairs.
+
+            Map<Integer, String> linkedHashMap = new LinkedHashMap<>();
+            linkedHashMap.put(201, "Amit");
+            linkedHashMap.put(202, "Priya");
+            linkedHashMap.put(203, "Muskan");   
+            linkedHashMap.put(204, "Rohit");
+
+            System.out.println("\nLinkedHashMap: " + linkedHashMap);
+            System.out.println("Value for key 202: " + linkedHashMap.get(202));
+
+            linkedHashMap.remove(203);
+            System.out.println("LinkedHashMap after removal: " + linkedHashMap);
+
+    }
+    
+}
