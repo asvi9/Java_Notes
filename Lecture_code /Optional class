@@ -1,0 +1,41 @@
+import java.util.Optional;
+
+public class OptionalDemo {
+    public static void main(String[] args) {
+        // Creating optional objects
+        Optional<String> empty = Optional.empty();    // Empty optional object
+
+        Optional<String> name = Optional.of("John");  // non-null value
+
+        Optional<String> maybe = Optional.ofNullable(null); // Null allowed
+
+        // checking presence
+
+        System.out.println("Is name present? " + name.isPresent()); // true
+
+        System.out.println("Is maybe present? " + maybe.isPresent()); // false
+
+        System.out.println("Is empty present? " + empty.isPresent()); // true(Java 11)
+  
+        //Getting values
+        System.out.println("Name: " + name.get()); // John
+
+        //safe access  with default 
+        System.out.println(empty.orElse("Default Value")); // Default Value
+
+        
+        System.out.println(maybe.orElse("Default Value")); // Default Value
+
+        // 5. orElseGet() method (lazy - supplier callewd only if value empty)
+        System.out.println(empty.orElseGet(() -> "Default Value from Supplier")); // Default Value from Supplier
+
+        // try catch
+try{
+        empty.orElseThrow(() -> new IllegalArgumentException("Value is not present")); // throws exception
+
+}catch(RuntimeException e){
+    System.out.println("Exception: " + e.getMessage());
+    }
+    
+    }
+}
