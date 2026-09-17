@@ -1,0 +1,19 @@
+public class LambdaDemo {
+    public static void main(String[] args) {
+        // Lambda expression to implement Runnable interface
+        Runnable r1 = () -> {
+            for (int i = 1; i <= 5; i++) {
+                System.out.println("Lambda Runnable: " + i);
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    System.out.println(e);
+                }
+            }
+        };
+
+        Thread t1 = new Thread(r1);
+        t1.start();
+    }
+    
+}
